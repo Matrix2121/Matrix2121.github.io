@@ -68,17 +68,83 @@
         color: #e8eef2;
       }
       nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
         margin-bottom: 1.5rem;
         font-size: 0.95rem;
       }
-      .toc {
-        margin: 0.4rem 0 1.2rem;
+      .lang-switch {
+        display: inline-flex;
+        flex-shrink: 0;
+        border: 1px solid #2a343a;
+        border-radius: 999px;
+        overflow: hidden;
+        background: #1a2126;
+      }
+      .lang-switch button {
+        appearance: none;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        color: #9aa8b0;
+        font: inherit;
+        font-weight: 650;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+        padding: 0.38rem 0.9rem;
+        cursor: pointer;
+      }
+      .lang-switch button[aria-pressed="true"] {
+        background: #2a343a;
+        color: #e8eef2;
+      }
+      .lang-switch button:focus-visible {
+        outline: 2px solid #8ec8e8;
+        outline-offset: -2px;
+      }
+      html.js[data-privacy-lang="en"] .lang-panel[data-lang="bg"],
+      html.js[data-privacy-lang="bg"] .lang-panel[data-lang="en"] {
+        display: none;
       }
     </style>
+    <script>
+      (function () {
+        document.documentElement.classList.add("js");
+        var stored = "";
+        try {
+          stored = localStorage.getItem("belot-privacy-lang") || "";
+        } catch (e) {}
+        var param = new URLSearchParams(location.search).get("lang");
+        var hash = (location.hash || "").replace("#", "").toLowerCase();
+        var nav = (navigator.language || "").toLowerCase();
+        var lang =
+          param === "bg" || param === "en"
+            ? param
+            : hash === "bg" || hash === "en"
+              ? hash
+              : stored === "bg" || stored === "en"
+                ? stored
+                : nav.indexOf("bg") === 0
+                  ? "bg"
+                  : "en";
+        document.documentElement.setAttribute("data-privacy-lang", lang);
+        document.documentElement.lang = lang;
+      })();
+    </script>
   </head>
   <body>
     <main>
-      <nav><a href="./">Aqua Marine Studio</a></nav>
+      <nav>
+        <a href="./">Aqua Marine Studio</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="bg" aria-pressed="false">BG</button>
+        </div>
+      </nav>
+
+      <article id="en" class="lang-panel" lang="en" data-lang="en">
       <h1>Belot Score — Privacy Policy</h1>
       <p class="meta">
         Public privacy policy for the App Store, Google Play, AdMob, and user
@@ -89,11 +155,6 @@
         Developer contact:
         <a href="mailto:aquamarinestudioos@gmail.com">aquamarinestudioos@gmail.com</a>
       </p>
-      <p class="toc">
-        <a href="#en">English</a> · <a href="#bg">Български</a>
-      </p>
-
-      <h2 id="en">English</h2>
 
       <h3>Introduction</h3>
       <p>
@@ -449,8 +510,19 @@
         <strong>Email:</strong>
         <a href="mailto:aquamarinestudioos@gmail.com">aquamarinestudioos@gmail.com</a>
       </p>
+      </article>
 
-      <h2 id="bg">Български</h2>
+      <article id="bg" class="lang-panel" lang="bg" data-lang="bg">
+      <h1>Belot Score — Политика за поверителност</h1>
+      <p class="meta">
+        Публична политика за поверителност за App Store, Google Play, AdMob и
+        потребителите.<br />
+        Последна актуализация: 17 септември 2026<br />
+        Приложение: Belot Score (<code>com.vasil.cardgamesscorer</code>)<br />
+        Платформи: iOS и Android<br />
+        Контакт:
+        <a href="mailto:aquamarinestudioos@gmail.com">aquamarinestudioos@gmail.com</a>
+      </p>
 
       <h3>Въведение</h3>
       <p>
@@ -678,6 +750,60 @@
         may collect purchase history to provide in-app purchases. We do not sell personal
         information.
       </p>
+      </article>
     </main>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll(".lang-switch button[data-lang]");
+        var group = document.querySelector(".lang-switch");
+
+        function setLang(lang, persist) {
+          if (lang !== "en" && lang !== "bg") {
+            lang = "en";
+          }
+          root.setAttribute("data-privacy-lang", lang);
+          root.lang = lang;
+          if (group) {
+            group.setAttribute(
+              "aria-label",
+              lang === "bg" ? "Език" : "Language",
+            );
+          }
+          buttons.forEach(function (button) {
+            button.setAttribute(
+              "aria-pressed",
+              button.getAttribute("data-lang") === lang ? "true" : "false",
+            );
+          });
+          if (persist) {
+            try {
+              localStorage.setItem("belot-privacy-lang", lang);
+            } catch (e) {}
+            if (history.replaceState) {
+              history.replaceState(null, "", "#" + lang);
+            } else {
+              location.hash = lang;
+            }
+          }
+        }
+
+        setLang(root.getAttribute("data-privacy-lang") || "en", false);
+
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            setLang(button.getAttribute("data-lang"), true);
+            window.scrollTo(0, 0);
+          });
+        });
+
+        window.addEventListener("hashchange", function () {
+          var hash = (location.hash || "").replace("#", "").toLowerCase();
+          if (hash === "en" || hash === "bg") {
+            setLang(hash, true);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
