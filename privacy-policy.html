@@ -6,7 +6,7 @@
     <title>Belot Score — Privacy Policy</title>
     <meta
       name="description"
-      content="Privacy policy for Belot Score (com.vasil.cardgamesscorer) on iOS and Android by Aqua Marine Studio."
+      content="Privacy policy and data-deletion instructions for Belot Score (com.vasil.cardgamesscorer) on iOS and Android by Aqua Marine Studio."
     />
     <style>
       :root {
@@ -104,6 +104,20 @@
         outline: 2px solid #8ec8e8;
         outline-offset: -2px;
       }
+      .delete-box {
+        margin: 1.4rem 0 0;
+        padding: 1rem 1.1rem 1.15rem;
+        border: 1px solid #3d6a7a;
+        border-radius: 10px;
+        background: #1a262c;
+      }
+      .delete-box h2 {
+        margin: 0 0 0.55rem;
+        font-size: 1.15rem;
+      }
+      .delete-box p:first-of-type {
+        margin-top: 0;
+      }
       html.js[data-privacy-lang="en"] .lang-panel[data-lang="bg"],
       html.js[data-privacy-lang="bg"] .lang-panel[data-lang="en"] {
         display: none;
@@ -124,11 +138,15 @@
             ? param
             : hash === "bg" || hash === "en"
               ? hash
-              : stored === "bg" || stored === "en"
-                ? stored
-                : nav.indexOf("bg") === 0
-                  ? "bg"
-                  : "en";
+              : hash === "iztrivane"
+                ? "bg"
+                : hash === "delete-data"
+                  ? "en"
+                  : stored === "bg" || stored === "en"
+                    ? stored
+                    : nav.indexOf("bg") === 0
+                      ? "bg"
+                      : "en";
         document.documentElement.setAttribute("data-privacy-lang", lang);
         document.documentElement.lang = lang;
       })();
@@ -147,9 +165,9 @@
       <article id="en" class="lang-panel" lang="en" data-lang="en">
       <h1>Belot Score — Privacy Policy</h1>
       <p class="meta">
-        Public privacy policy for the App Store, Google Play, AdMob, and user
-        transparency.<br />
-        Last updated: September 17, 2026<br />
+        Public privacy policy for the App Store, Google Play, AdMob, Firebase /
+        Google Analytics, and user transparency.<br />
+        Last updated: September 19, 2026<br />
         App: Belot Score (<code>com.vasil.cardgamesscorer</code>)<br />
         Platforms: iOS and Android<br />
         Developer contact:
@@ -200,11 +218,69 @@
           features, and subscriptions) are processed by Apple or Google. We use
           <strong>RevenueCat</strong> to confirm what you bought.
         </li>
+        <li>
+          The App may use <strong>Google Analytics for Firebase</strong> to measure
+          how the App is used (screens, sessions, and similar events). This data is
+          not tied to a name or email we collect.
+        </li>
         <li>We do <strong>not</strong> sell your personal information.</li>
         <li>
           Paid features do <strong>not</strong> require you to allow tracking or ads.
         </li>
       </ul>
+
+      <section class="delete-box" id="delete-data">
+        <h2>Request deletion of your data (Belot Score)</h2>
+        <p>
+          This section is for users of <strong>Belot Score</strong> by
+          <strong>Aqua Marine Studio</strong>. The App does
+          <strong>not</strong> create accounts. Follow these steps to request
+          deletion of data we control.
+        </p>
+        <ol>
+          <li>
+            Email
+            <a href="mailto:aquamarinestudioos@gmail.com?subject=Belot%20Score%20data%20deletion"
+              >aquamarinestudioos@gmail.com</a
+            >
+            with the subject <strong>Belot Score data deletion</strong>.
+          </li>
+          <li>
+            If the request involves a purchase, include your Google Play order ID
+            or the email / Apple ID used for the store. Otherwise write that you
+            want analytics or purchase records deleted.
+          </li>
+        </ol>
+        <p><strong>What we delete</strong> (usually within 30 days of a valid request):</p>
+        <ul>
+          <li>
+            RevenueCat customer and purchase records we can reasonably identify
+          </li>
+          <li>
+            Firebase / Google Analytics records we can reasonably identify
+            (app-instance / usage data associated with your request)
+          </li>
+        </ul>
+        <p><strong>What is deleted on your device</strong> when you uninstall the App or clear its storage:</p>
+        <ul>
+          <li>Game scores, hands, history, player names, and settings</li>
+          <li>Local purchase-entitlement cache</li>
+        </ul>
+        <p>
+          We do <strong>not</strong> keep a copy of your game scores on our servers.
+        </p>
+        <p><strong>What we cannot delete on your behalf</strong> (use their tools; they keep data per their own policies and retention periods):</p>
+        <ul>
+          <li>Google AdMob / Google advertising data</li>
+          <li>Apple App Store and Google Play billing history</li>
+          <li>Device backups (iCloud / Google Backup)</li>
+        </ul>
+        <p>
+          Uninstalling the App stops new local and analytics collection from that
+          installation. It does <strong>not</strong> cancel a subscription; manage
+          subscriptions in Google Play or your Apple ID.
+        </p>
+      </section>
 
       <h3>Information stored on your device</h3>
       <p>The App stores the following data locally on your phone or tablet:</p>
@@ -261,6 +337,48 @@
         You can learn more about how Google uses data from apps that use its services here:
         <a href="https://policies.google.com/technologies/partner-sites"
           >How Google uses information from sites or apps that use our services</a
+        >.
+      </p>
+
+      <h3>Information collected by Firebase / Google Analytics</h3>
+      <p>
+        The App may use <strong>Google Analytics for Firebase</strong> to collect
+        aggregated usage metrics so we can understand which screens and features
+        people use and improve the App. By default this SDK may collect:
+      </p>
+      <ul>
+        <li>
+          An app-instance identifier (a random ID for that installation, not your
+          name or email)
+        </li>
+        <li>
+          Android Advertising ID, if available (you can reset or limit this in
+          device settings)
+        </li>
+        <li>
+          Approximate location derived from a masked IP address (for example city
+          or country), not GPS
+        </li>
+        <li>App lifecycle events such as screen views and sessions</li>
+        <li>
+          In-app purchase events (product ID, name, and price) when a store
+          purchase occurs
+        </li>
+      </ul>
+      <p>
+        We do <strong>not</strong> set a personal User ID, enable Google Signals,
+        or upload your game scores or player names to Analytics. We do
+        <strong>not</strong> use Firebase Crashlytics; the App does not send
+        crash-log files to us for this purpose.
+      </p>
+      <p>
+        This data is transmitted to Google over HTTPS and is used for
+        <strong>analytics</strong> (how the App is used). Google processes it as
+        our analytics provider. See
+        <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>
+        and
+        <a href="https://firebase.google.com/support/privacy"
+          >Firebase Privacy and Security</a
         >.
       </p>
 
@@ -347,6 +465,15 @@
               the developer
             </td>
           </tr>
+          <tr>
+            <td>Usage metrics (via Google Analytics for Firebase)</td>
+            <td>
+              Collected automatically by the Analytics SDK (app-instance ID, screens /
+              sessions, optional advertising ID, approximate location from IP, purchase
+              events)
+            </td>
+            <td>Analytics: understand usage and improve the App</td>
+          </tr>
         </tbody>
       </table>
       <p>
@@ -361,6 +488,9 @@
       </p>
       <ul>
         <li><strong>Google AdMob / Google</strong> — advertising and ad measurement</li>
+        <li>
+          <strong>Google Analytics for Firebase</strong> — app usage metrics
+        </li>
         <li><strong>RevenueCat</strong> — in-app purchase validation and entitlements</li>
         <li>
           <strong>Apple</strong> and <strong>Google Play</strong> — store billing, refunds,
@@ -393,6 +523,11 @@
           entitlements (performance of a contract), and as needed to keep records of
           transactions.
         </li>
+        <li>
+          <strong>Analytics data:</strong> processed to measure and improve the App
+          (legitimate interests). Where required, we rely on consent (for example
+          through Google’s consent form / UMP).
+        </li>
       </ul>
 
       <h3>Data sharing</h3>
@@ -402,6 +537,10 @@
         <li>
           AdMob / Google may share ad-related data with advertising partners as described
           in Google’s policies.
+        </li>
+        <li>
+          Google Analytics for Firebase sends usage data to Google to provide analytics
+          to us. We do not sell this data.
         </li>
         <li>
           RevenueCat, Apple, and Google process purchase-related data to complete and
@@ -416,8 +555,8 @@
           the App (device backups may keep a copy until you delete them).
         </li>
         <li>
-          Data collected by Google for advertising is retained according to Google’s
-          policies.
+          Data collected by Google for advertising or Analytics is retained according
+          to Google’s policies.
         </li>
         <li>
           Purchase records are retained by Apple, Google, and RevenueCat according to
@@ -466,14 +605,15 @@
         subscriptions / Report a Problem, or Google Play subscriptions / Play refund
         flow). Deleting the App does not automatically cancel a subscription.
       </p>
-      <p><strong>Contact us</strong></p>
+      <p><strong>Contact us / request deletion</strong></p>
       <p>
-        For privacy questions or deletion requests related to data we control, email
+        For privacy questions or deletion requests related to data we control, follow
+        <a href="#delete-data">Request deletion of your data</a> or email
         <a href="mailto:aquamarinestudioos@gmail.com">aquamarinestudioos@gmail.com</a>.
-        We will help with data we control (for example asking RevenueCat to delete
-        purchase records we can reasonably identify). We cannot delete data held by
-        Google or Apple on your behalf; use their tools and settings for advertising IDs,
-        store purchase history, and backups.
+        We will help with data we control (for example asking RevenueCat or Firebase
+        to delete records we can reasonably identify). We cannot delete data held by
+        Google or Apple on your behalf; use their tools and settings for advertising
+        IDs, store purchase history, and backups.
       </p>
 
       <h3>Children’s privacy</h3>
@@ -487,15 +627,16 @@
 
       <h3>Security</h3>
       <p>
-        Data transmitted for advertising and purchases uses encrypted connections
-        (HTTPS). Local data is stored in the App’s private storage on your device.
+        Data transmitted for advertising, analytics, and purchases uses encrypted
+        connections (HTTPS). Local data is stored in the App’s private storage on
+        your device.
       </p>
 
       <h3>International transfers</h3>
       <p>
-        If you use the App outside your home country, ad-related and purchase-related
-        data may be processed by Google, Apple, and RevenueCat in countries where they
-        operate, as described in their privacy documentation.
+        If you use the App outside your home country, ad-related, analytics, and
+        purchase-related data may be processed by Google, Apple, and RevenueCat in
+        countries where they operate, as described in their privacy documentation.
       </p>
 
       <h3>Changes to this policy</h3>
@@ -515,9 +656,9 @@
       <article id="bg" class="lang-panel" lang="bg" data-lang="bg">
       <h1>Belot Score — Политика за поверителност</h1>
       <p class="meta">
-        Публична политика за поверителност за App Store, Google Play, AdMob и
-        потребителите.<br />
-        Последна актуализация: 17 септември 2026<br />
+        Публична политика за поверителност за App Store, Google Play, AdMob,
+        Firebase / Google Analytics и потребителите.<br />
+        Последна актуализация: 19 септември 2026<br />
         Приложение: Belot Score (<code>com.vasil.cardgamesscorer</code>)<br />
         Платформи: iOS и Android<br />
         Контакт:
@@ -561,11 +702,74 @@
           Покупките в приложението се обработват от Apple или Google. Използваме
           <strong>RevenueCat</strong>, за да потвърдим какво сте купили.
         </li>
+        <li>
+          Приложението може да използва <strong>Google Analytics for Firebase</strong>
+          за измерване на използването (екрани, сесии и подобни събития). Тези данни
+          не са свързани с име или имейл, които ние събираме.
+        </li>
         <li><strong>Не</strong> продаваме лични данни.</li>
         <li>
           Платените функции <strong>не</strong> изискват да разрешите проследяване.
         </li>
       </ul>
+
+      <section class="delete-box" id="iztrivane">
+        <h2>Искане за изтриване на данни (Belot Score)</h2>
+        <p>
+          Този раздел е за потребители на <strong>Belot Score</strong> от
+          <strong>Aqua Marine Studio</strong>. Приложението <strong>не</strong>
+          създава акаунти. Следвайте стъпките, за да поискате изтриване на данни,
+          които контролираме.
+        </p>
+        <ol>
+          <li>
+            Пишете на
+            <a href="mailto:aquamarinestudioos@gmail.com?subject=Belot%20Score%20data%20deletion"
+              >aquamarinestudioos@gmail.com</a
+            >
+            с тема <strong>Belot Score data deletion</strong>.
+          </li>
+          <li>
+            Ако искането е свързано с покупка, включете Google Play order ID или
+            имейла / Apple ID от магазина. В противен случай напишете, че искате
+            изтриване на аналитични или покупкови записи.
+          </li>
+        </ol>
+        <p><strong>Какво изтриваме</strong> (обикновено до 30 дни след валидно искане):</p>
+        <ul>
+          <li>
+            Записи за клиент/покупки в RevenueCat, които можем разумно да идентифицираме
+          </li>
+          <li>
+            Записи в Firebase / Google Analytics, които можем разумно да идентифицираме
+          </li>
+        </ul>
+        <p>
+          <strong>Какво се изтрива на устройството</strong>, когато деинсталирате
+          Приложението или изчистите паметта му:
+        </p>
+        <ul>
+          <li>Резултати, раздавания, история, имена на играчи и настройки</li>
+          <li>Локален кеш на покупките</li>
+        </ul>
+        <p>
+          <strong>Не</strong> пазим копие на игровите резултати на наши сървъри.
+        </p>
+        <p>
+          <strong>Какво не можем да изтрием вместо вас</strong> (използвайте техните
+          инструменти; те пазят данни според собствените си политики):
+        </p>
+        <ul>
+          <li>Данни за реклами на Google AdMob / Google</li>
+          <li>История на плащанията в App Store и Google Play</li>
+          <li>Резервни копия на устройството (iCloud / Google Backup)</li>
+        </ul>
+        <p>
+          Деинсталирането спира ново събиране от тази инсталация. То
+          <strong>не</strong> отменя абонамент — управлявайте абонаменти в Google
+          Play или Apple ID.
+        </p>
+      </section>
 
       <h3>Данни на устройството</h3>
       <p>
@@ -595,6 +799,27 @@
           >Политиката за поверителност на Google</a
         >.
         Google е независим администратор за рекламните данни.
+      </p>
+
+      <h3>Данни от Firebase / Google Analytics</h3>
+      <p>
+        Приложението може да използва <strong>Google Analytics for Firebase</strong>
+        за агрегирани метрики на използването. По подразбиране SDK-то може да събира:
+        идентификатор на инсталацията (не име/имейл), рекламен идентификатор на
+        Android ако е наличен, приблизително местоположение от маскиран IP (не GPS),
+        събития за екрани/сесии и събития за покупки в приложението.
+      </p>
+      <p>
+        <strong>Не</strong> задаваме личен User ID и <strong>не</strong> качваме
+        резултати или имена в Analytics. <strong>Не</strong> използваме Firebase
+        Crashlytics — приложението не ни изпраща crash логове за тази цел. Вижте
+        <a href="https://policies.google.com/privacy"
+          >Политиката за поверителност на Google</a
+        >
+        и
+        <a href="https://firebase.google.com/support/privacy"
+          >поверителността на Firebase</a
+        >.
       </p>
 
       <h3>Проследяване в iOS (App Tracking Transparency)</h3>
@@ -640,13 +865,18 @@
             <td>Покупки (магазини и RevenueCat)</td>
             <td>Отключване на платени функции и аналитика на покупките</td>
           </tr>
+          <tr>
+            <td>Метрики на използване (Google Analytics for Firebase)</td>
+            <td>Аналитика: как се използва Приложението и подобрения</td>
+          </tr>
         </tbody>
       </table>
 
       <h3>Трети страни и равна защита</h3>
       <p>
-        Споделяме данни само както е описано тук: Google AdMob (реклами), RevenueCat
-        (покупки), Apple и Google Play (плащания). Третите страни, с които Приложението
+        Споделяме данни само както е описано тук: Google AdMob (реклами), Google
+        Analytics for Firebase (метрики), RevenueCat (покупки), Apple и Google Play
+        (плащания). Третите страни, с които Приложението
         споделя потребителски данни, трябва да осигурят
         <strong>същата или равностойна защита</strong>, както тази политика и правилата
         на магазините (включително насоките на Apple).
@@ -664,12 +894,20 @@
         <li>
           <strong>Покупки:</strong> изпълнение на покупката и възстановяване на правата.
         </li>
+        <li>
+          <strong>Аналитика:</strong> измерване и подобряване на Приложението
+          (законен интерес), а където се изисква — съгласие.
+        </li>
       </ul>
 
       <h3>Споделяне</h3>
       <ul>
         <li>Локалните игрови данни <strong>не</strong> споделяме.</li>
         <li>AdMob/Google споделят рекламни данни според политиките на Google.</li>
+        <li>
+          Google Analytics for Firebase изпраща данни за използване към Google, за да
+          ни предоставя аналитика. Не продаваме тези данни.
+        </li>
         <li>RevenueCat, Apple и Google обработват данни за покупки.</li>
         <li><strong>Не</strong> продаваме лична информация.</li>
       </ul>
@@ -680,7 +918,10 @@
           Локалните данни остават на устройството, докато изчистите паметта или
           деинсталирате Приложението.
         </li>
-        <li>Рекламните и покупковите данни се пазят според политиките на Google, Apple и RevenueCat.</li>
+        <li>
+          Рекламните, аналитичните и покупковите данни се пазят според политиките
+          на Google, Apple и RevenueCat.
+        </li>
       </ul>
 
       <h3>Избор, съгласие и изтриване</h3>
@@ -714,7 +955,8 @@
         приложението не го отменя автоматично.
       </p>
       <p>
-        Въпроси и искания за изтриване на данни, които контролираме:
+        Въпроси и искания за изтриване на данни, които контролираме: вижте
+        <a href="#iztrivane">Искане за изтриване на данни</a> или
         <a href="mailto:aquamarinestudioos@gmail.com">aquamarinestudioos@gmail.com</a>.
         Не можем да изтрием данни, държани от Google или Apple вместо вас.
       </p>
@@ -727,8 +969,9 @@
 
       <h3>Сигурност и международни прехвърляния</h3>
       <p>
-        Предаването за реклами и покупки използва HTTPS. Рекламни и покупкови данни може
-        да се обработват от Google, Apple и RevenueCat в държави, в които оперират.
+        Предаването за реклами, аналитика и покупки използва HTTPS. Рекламни,
+        аналитични и покупкови данни може да се обработват от Google, Apple и
+        RevenueCat в държави, в които оперират.
       </p>
 
       <h3>Промени</h3>
@@ -745,8 +988,10 @@
 
       <p class="meta">
         App Store / Google Play alignment: Local game data is not collected by us
-        off-device. AdMob may collect device/ad IDs, ad interactions, and diagnostics
-        (and may use data for tracking if you allow it on iOS). RevenueCat and the stores
+        off-device. AdMob may collect device/ad IDs, ad interactions, diagnostics,
+        and approximate location. Google Analytics for Firebase may collect an
+        app-instance ID, usage events, advertising ID, approximate location from IP,
+        and purchase events. We do not use Crashlytics. RevenueCat and the stores
         may collect purchase history to provide in-app purchases. We do not sell personal
         information.
       </p>
@@ -801,6 +1046,10 @@
           var hash = (location.hash || "").replace("#", "").toLowerCase();
           if (hash === "en" || hash === "bg") {
             setLang(hash, true);
+          } else if (hash === "delete-data") {
+            setLang("en", false);
+          } else if (hash === "iztrivane") {
+            setLang("bg", false);
           }
         });
       })();
