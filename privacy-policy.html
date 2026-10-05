@@ -167,7 +167,7 @@
       <p class="meta">
         Public privacy policy for the App Store, Google Play, AdMob, Firebase /
         Google Analytics, and user transparency.<br />
-        Last updated: September 19, 2026<br />
+        Last updated: October 5, 2026<br />
         App: Belot Score (<code>com.vasil.cardgamesscorer</code>)<br />
         Platforms: iOS and Android<br />
         Developer contact:
@@ -219,9 +219,12 @@
           <strong>RevenueCat</strong> to confirm what you bought.
         </li>
         <li>
-          The App may use <strong>Google Analytics for Firebase</strong> to measure
-          how the App is used (screens, sessions, and similar events). This data is
-          not tied to a name or email we collect.
+          If you allow it, the App uses <strong>Google Analytics for Firebase</strong>
+          to measure how the App is used (screens you open, sessions, and general hand
+          results — never player names). We ask first. You can refuse, and you can
+          change that choice later in <strong>Settings → Usage analytics</strong>.
+          This data is not tied to a name or email we collect. Refusing it does not
+          turn ads off.
         </li>
         <li>We do <strong>not</strong> sell your personal information.</li>
         <li>
@@ -342,14 +345,25 @@
 
       <h3>Information collected by Firebase / Google Analytics</h3>
       <p>
-        The App may use <strong>Google Analytics for Firebase</strong> to collect
-        aggregated usage metrics so we can understand which screens and features
-        people use and improve the App. By default this SDK may collect:
+        We use <strong>Google Analytics for Firebase</strong> only after you allow
+        <strong>usage analytics</strong>. Before any of this data is sent, the App
+        asks you to allow or refuse. If you refuse, usage analytics stay off. You
+        can change the choice later in <strong>Settings → Usage analytics</strong>.
+        Turning it off stops new usage analytics from that point. The App works the
+        same either way. This choice does not turn ads on or off.
       </p>
+      <p>If you allow usage analytics, the SDK may collect:</p>
       <ul>
         <li>
           An app-instance identifier (a random ID for that installation, not your
           name or email)
+        </li>
+        <li>Which screens you open, and session information</li>
+        <li>
+          General results of a confirmed hand: points for each side, trump, contract
+          flags (such as contra, capot, hanging, or inside), announcement types, and
+          a seat index. We do <strong>not</strong> send player names, your display
+          name, or the full game history.
         </li>
         <li>
           Android Advertising ID, if available (you can reset or limit this in
@@ -359,16 +373,14 @@
           Approximate location derived from a masked IP address (for example city
           or country), not GPS
         </li>
-        <li>App lifecycle events such as screen views and sessions</li>
         <li>
           In-app purchase events (product ID, name, and price) when a store
           purchase occurs
         </li>
       </ul>
       <p>
-        We do <strong>not</strong> set a personal User ID, enable Google Signals,
-        or upload your game scores or player names to Analytics. We do
-        <strong>not</strong> use Firebase Crashlytics; the App does not send
+        We do <strong>not</strong> set a personal User ID or enable Google Signals.
+        We do <strong>not</strong> use Firebase Crashlytics; the App does not send
         crash-log files to us for this purpose.
       </p>
       <p>
@@ -401,6 +413,12 @@
           where Google supports that.
         </li>
       </ul>
+      <p>
+        This system prompt is separate from the in-app <strong>usage analytics</strong>
+        question. Answering one does not answer the other. Android has no equivalent
+        system prompt; advertising-ID choices are under
+        <strong>Settings → Google → Ads</strong>.
+      </p>
       <p>
         You can change this later in iOS:
         <strong>Settings → Privacy &amp; Security → Tracking</strong>. You can also limit
@@ -468,9 +486,10 @@
           <tr>
             <td>Usage metrics (via Google Analytics for Firebase)</td>
             <td>
-              Collected automatically by the Analytics SDK (app-instance ID, screens /
-              sessions, optional advertising ID, approximate location from IP, purchase
-              events)
+              Sent only after you allow usage analytics in the App: app-instance ID,
+              screens and sessions, general hand results without player names, and,
+              where the SDK provides them, approximate location from IP and purchase
+              events
             </td>
             <td>Analytics: understand usage and improve the App</td>
           </tr>
@@ -524,9 +543,10 @@
           transactions.
         </li>
         <li>
-          <strong>Analytics data:</strong> processed to measure and improve the App
-          (legitimate interests). Where required, we rely on consent (for example
-          through Google’s consent form / UMP).
+          <strong>Analytics data:</strong> processed only with your consent. The App
+          asks you to allow or refuse usage analytics before any of it is sent. You
+          can withdraw that consent later in <strong>Settings → Usage analytics</strong>.
+          The ads consent form does not cover this purpose.
         </li>
       </ul>
 
@@ -566,6 +586,15 @@
       </ul>
 
       <h3>Your choices, consent, and data deletion</h3>
+      <p><strong>Usage analytics</strong></p>
+      <ul>
+        <li>
+          In the App: <strong>Settings → Usage analytics</strong>. Off means we do not
+          send screen views or hand results to Firebase. On means you allow that
+          collection. The App works either way, and ads are not turned off when this
+          is off.
+        </li>
+      </ul>
       <p><strong>Withdraw consent (ads / tracking)</strong></p>
       <ul>
         <li>
@@ -658,7 +687,7 @@
       <p class="meta">
         Публична политика за поверителност за App Store, Google Play, AdMob,
         Firebase / Google Analytics и потребителите.<br />
-        Последна актуализация: 19 септември 2026<br />
+        Последна актуализация: 5 октомври 2026<br />
         Приложение: Belot Score (<code>com.vasil.cardgamesscorer</code>)<br />
         Платформи: iOS и Android<br />
         Контакт:
@@ -703,9 +732,13 @@
           <strong>RevenueCat</strong>, за да потвърдим какво сте купили.
         </li>
         <li>
-          Приложението може да използва <strong>Google Analytics for Firebase</strong>
-          за измерване на използването (екрани, сесии и подобни събития). Тези данни
-          не са свързани с име или имейл, които ние събираме.
+          Ако разрешите, Приложението използва
+          <strong>Google Analytics for Firebase</strong>, за да измерва използването
+          (кои екрани отваряте, сесии и общ резултат на раздавания — никога имена на
+          играчи). Питаме предварително. Можете да откажете и да промените избора
+          по-късно от <strong>Настройки → Аналитика за използването</strong>. Тези
+          данни не са свързани с име или имейл, които ние събираме. Отказът не
+          изключва рекламите.
         </li>
         <li><strong>Не</strong> продаваме лични данни.</li>
         <li>
@@ -803,16 +836,32 @@
 
       <h3>Данни от Firebase / Google Analytics</h3>
       <p>
-        Приложението може да използва <strong>Google Analytics for Firebase</strong>
-        за агрегирани метрики на използването. По подразбиране SDK-то може да събира:
-        идентификатор на инсталацията (не име/имейл), рекламен идентификатор на
-        Android ако е наличен, приблизително местоположение от маскиран IP (не GPS),
-        събития за екрани/сесии и събития за покупки в приложението.
+        Използваме <strong>Google Analytics for Firebase</strong> само след като
+        разрешите <strong>аналитика за използването</strong>. Преди да се изпратят
+        такива данни, Приложението пита дали разрешавате или отказвате. При отказ
+        аналитиката остава изключена. Изборът се сменя по-късно от
+        <strong>Настройки → Аналитика за използването</strong>. Изключването спира
+        новите данни от този момент. Приложението работи по същия начин и в двата
+        случая. Този избор не включва и не изключва рекламите.
       </p>
+      <p>Ако разрешите, SDK-то може да събира:</p>
+      <ul>
+        <li>Идентификатор на инсталацията (не име или имейл)</li>
+        <li>Кои екрани отваряте и данни за сесията</li>
+        <li>
+          Общ резултат на потвърдено раздаване: точки за всяка страна, коз, признаци
+          на договора (например контра, капот, висящо или отвътре), видове анонси и
+          индекс на място. <strong>Не</strong> изпращаме имена на играчи, вашето име
+          или пълната история на игрите.
+        </li>
+        <li>Рекламен идентификатор на Android, ако е наличен</li>
+        <li>Приблизително местоположение от маскиран IP (не GPS)</li>
+        <li>Събития за покупки в приложението, когато има покупка от магазина</li>
+      </ul>
       <p>
-        <strong>Не</strong> задаваме личен User ID и <strong>не</strong> качваме
-        резултати или имена в Analytics. <strong>Не</strong> използваме Firebase
-        Crashlytics — приложението не ни изпраща crash логове за тази цел. Вижте
+        <strong>Не</strong> задаваме личен User ID и <strong>не</strong> включваме
+        Google Signals. <strong>Не</strong> използваме Firebase Crashlytics —
+        приложението не ни изпраща crash логове за тази цел. Вижте
         <a href="https://policies.google.com/privacy"
           >Политиката за поверителност на Google</a
         >
@@ -831,6 +880,12 @@
       <p>
         По-късно:
         <strong>Настройки → Поверителност и сигурност → Проследяване</strong>.
+      </p>
+      <p>
+        Това системно питане е отделно от въпроса в Приложението за
+        <strong>аналитика за използването</strong>. Отговорът на едното не отговаря
+        на другото. Android няма същото системно питане; изборът за рекламния
+        идентификатор е в <strong>Настройки → Google → Реклами</strong>.
       </p>
 
       <h3>Покупки в приложението</h3>
@@ -867,7 +922,10 @@
           </tr>
           <tr>
             <td>Метрики на използване (Google Analytics for Firebase)</td>
-            <td>Аналитика: как се използва Приложението и подобрения</td>
+            <td>
+              Само след разрешение в Приложението: как се използва то и подобрения.
+              Не включва имена на играчи.
+            </td>
           </tr>
         </tbody>
       </table>
@@ -895,8 +953,11 @@
           <strong>Покупки:</strong> изпълнение на покупката и възстановяване на правата.
         </li>
         <li>
-          <strong>Аналитика:</strong> измерване и подобряване на Приложението
-          (законен интерес), а където се изисква — съгласие.
+          <strong>Аналитика:</strong> само със съгласие. Приложението пита дали
+          разрешавате аналитика за използването, преди да се изпратят данни. Можете
+          да оттеглите съгласието по-късно от
+          <strong>Настройки → Аналитика за използването</strong>. Формулярът за
+          реклами не покрива тази цел.
         </li>
       </ul>
 
@@ -925,6 +986,16 @@
       </ul>
 
       <h3>Избор, съгласие и изтриване</h3>
+      <p><strong>Аналитика за използването</strong></p>
+      <ul>
+        <li>
+          В Приложението: <strong>Настройки → Аналитика за използването</strong>.
+          Изключено означава, че не изпращаме екрани и резултати от раздавания към
+          Firebase. Включено означава, че разрешавате това събиране. Приложението
+          работи и в двата случая, а рекламите не се спират, когато това е
+          изключено.
+        </li>
+      </ul>
       <p><strong>Оттегляне на съгласие (реклами / проследяване)</strong></p>
       <ul>
         <li>
@@ -989,10 +1060,12 @@
       <p class="meta">
         App Store / Google Play alignment: Local game data is not collected by us
         off-device. AdMob may collect device/ad IDs, ad interactions, diagnostics,
-        and approximate location. Google Analytics for Firebase may collect an
-        app-instance ID, usage events, advertising ID, approximate location from IP,
-        and purchase events. We do not use Crashlytics. RevenueCat and the stores
-        may collect purchase history to provide in-app purchases. We do not sell personal
+        and approximate location. Google Analytics for Firebase runs only after the
+        user allows usage analytics in the app (Settings → Usage analytics). If
+        allowed, it may collect an app-instance ID, screen views, sessions, general
+        hand results without player names, approximate location from IP, and purchase
+        events. We do not use Crashlytics. RevenueCat and the stores may collect
+        purchase history to provide in-app purchases. We do not sell personal
         information.
       </p>
       </article>
