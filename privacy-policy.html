@@ -170,7 +170,7 @@
       <p class="meta">
         Public privacy policy for the App Store, Google Play, AdMob, Firebase /
         Google Analytics, and user transparency.<br />
-        Last updated: October 5, 2026<br />
+        Last updated: October 16, 2026<br />
         App: Belot Score (<code>com.vasil.cardgamesscorer</code>)<br />
         Platforms: iOS and Android<br />
         Developer contact:
@@ -217,17 +217,21 @@
           your device.
         </li>
         <li>
-          Optional <strong>in-app purchases</strong> (including ad-free access, extra
-          features, and subscriptions) are processed by Apple or Google. We use
-          <strong>RevenueCat</strong> to confirm what you bought.
+          Optional <strong>in-app purchases</strong> (for example removing ads or
+          unlocking stats) are processed by Apple or Google. We use
+          <strong>RevenueCat</strong> to confirm what you bought. Use
+          <strong>Restore purchases</strong> in Settings or on a paywall to re-apply
+          what you already bought.
         </li>
         <li>
-          If you allow it, the App uses <strong>Google Analytics for Firebase</strong>
-          to measure how the App is used (screens you open, sessions, and general hand
-          results — never player names). We ask first. You can refuse, and you can
-          change that choice later in <strong>Settings → Usage analytics</strong>.
-          This data is not tied to a name or email we collect. Refusing it does not
-          turn ads off.
+          Optional <strong>Google Analytics for Firebase</strong> may measure how the
+          App is used (screens you open, sessions, and general hand results — never
+          player names). There is <strong>no</strong> analytics prompt at launch.
+          Collection starts only if you turn on
+          <strong>Settings → Usage analytics</strong> on a store build, and only if
+          iOS App Tracking is allowed when ATT applies. Ask App Not to Track turns
+          analytics off and hides that toggle. Refusing analytics does not turn ads
+          off.
         </li>
         <li>We do <strong>not</strong> sell your personal information.</li>
         <li>
@@ -349,11 +353,13 @@
       <h3>Information collected by Firebase / Google Analytics</h3>
       <p>
         We use <strong>Google Analytics for Firebase</strong> only after you allow
-        <strong>usage analytics</strong>. Before any of this data is sent, the App
-        asks you to allow or refuse. If you refuse, usage analytics stay off. You
-        can change the choice later in <strong>Settings → Usage analytics</strong>.
-        Turning it off stops new usage analytics from that point. The App works the
-        same either way. This choice does not turn ads on or off.
+        <strong>usage analytics</strong> in <strong>Settings → Usage analytics</strong>
+        on a store release build. There is <strong>no</strong> launch analytics
+        prompt. On iOS, collection also requires App Tracking Transparency to be
+        allowed; if you choose Ask App Not to Track, Firebase stays off and the
+        Settings toggle is hidden. Turning usage analytics off stops new events from
+        that point. The App works the same either way. This choice does not turn ads
+        on or off.
       </p>
       <p>If you allow usage analytics, the SDK may collect:</p>
       <ul>
@@ -399,28 +405,31 @@
 
       <h3>App Tracking Transparency (iOS)</h3>
       <p>
-        On iOS, if the App wants to use the advertising identifier to deliver personalized
-        ads or measure ads across apps and websites, Apple requires permission through
-        <strong>App Tracking Transparency</strong>. You may see a system prompt explaining
-        that the identifier is used to deliver ads and measure ad performance.
+        On iOS, Apple requires permission through
+        <strong>App Tracking Transparency</strong> before the App uses the advertising
+        identifier for personalized ads or cross-app measurement. The system prompt
+        explains that the identifier is used to deliver personalized ads, measure ad
+        performance, and measure app usage when you turn on usage analytics.
       </p>
       <ul>
         <li>
           If you tap <strong>Allow</strong>, Google may use the advertising identifier for
-          personalized ads and measurement.
+          personalized ads and measurement, and you may later turn on
+          <strong>Settings → Usage analytics</strong>.
         </li>
         <li>
           If you tap <strong>Ask App Not to Track</strong> (or later turn tracking off),
-          the App will not access your advertising identifier for tracking. You can still
-          use the App, including paid features. Ads, if shown, should be non-personalized
-          where Google supports that.
+          the App does not use your advertising identifier for tracking. Banner ads, if
+          shown, are requested as <strong>non-personalized only</strong>. Google’s EU ad
+          consent form (UMP) is <strong>not</strong> shown after that choice.
+          Firebase Analytics stays off and Settings → Usage analytics is hidden. You can
+          still use the App, including paid features.
         </li>
       </ul>
       <p>
-        This system prompt is separate from the in-app <strong>usage analytics</strong>
-        question. Answering one does not answer the other. Android has no equivalent
-        system prompt; advertising-ID choices are under
-        <strong>Settings → Google → Ads</strong>.
+        There is no separate analytics dialog at launch. Usage analytics is Settings-only
+        and still requires ATT allow on iOS. Android has no ATT prompt; advertising-ID
+        choices are under <strong>Settings → Google → Ads</strong>.
       </p>
       <p>
         You can change this later in iOS:
@@ -436,10 +445,13 @@
       <h3>In-app purchases</h3>
       <p>
         The App may offer one-time purchases (for example removing ads or unlocking
-        features) and auto-renewable subscriptions. Payment is processed by
+        stats). Payment is processed by
         <strong>Apple</strong> (App Store) or <strong>Google</strong> (Google Play). We do
         not receive or store your full payment card number, bank details, or Apple/Google
-        password.
+        password. Refunds are handled by Apple or Google (for example App Store → Report a
+        Problem), not by a refund button inside Belot Score. Use
+        <strong>Restore purchases</strong> in Settings or on a paywall to re-apply
+        entitlements you already own.
       </p>
       <p>
         We use <strong>RevenueCat</strong> to validate receipts, restore purchases, and
@@ -536,9 +548,10 @@
         </li>
         <li>
           <strong>Advertising data:</strong> processed by Google as an independent
-          controller. Where required, we ask for consent through Google’s consent form
-          (UMP) and, on iOS, through App Tracking Transparency before using data for
-          tracking. You can withdraw consent as described below.
+          controller. On iOS, App Tracking Transparency controls personalized ads. Where
+          tracking is allowed and regional rules require it, Google’s consent form (UMP)
+          may appear. After Ask App Not to Track, UMP is not shown and ads are
+          non-personalized. You can withdraw consent as described below.
         </li>
         <li>
           <strong>Purchase data:</strong> processed to fulfil your purchase and restore
@@ -546,9 +559,9 @@
           transactions.
         </li>
         <li>
-          <strong>Analytics data:</strong> processed only with your consent. The App
-          asks you to allow or refuse usage analytics before any of it is sent. You
-          can withdraw that consent later in <strong>Settings → Usage analytics</strong>.
+          <strong>Analytics data:</strong> processed only with your consent via
+          <strong>Settings → Usage analytics</strong> (no launch prompt), and on iOS only
+          when App Tracking is allowed. You can withdraw that consent later in Settings.
           The ads consent form does not cover this purpose.
         </li>
       </ul>
@@ -601,8 +614,9 @@
       <p><strong>Withdraw consent (ads / tracking)</strong></p>
       <ul>
         <li>
-          In the App: <strong>Settings → Ad &amp; privacy choices</strong> (opens Google’s
-          privacy / consent form where available).
+          In the App: <strong>Settings → Ad &amp; privacy choices</strong> opens Google’s
+          privacy / consent form when tracking is allowed. After Ask App Not to Track, that
+          row shows an in-app notice that ads are already non-personalized (no UMP form).
         </li>
         <li>
           iOS: <strong>Settings → Privacy &amp; Security → Tracking</strong>, and
@@ -738,10 +752,11 @@
           Ако разрешите, Приложението използва
           <strong>Google Analytics for Firebase</strong>, за да измерва използването
           (кои екрани отваряте, сесии и общ резултат на раздавания — никога имена на
-          играчи). Питаме предварително. Можете да откажете и да промените избора
-          по-късно от <strong>Настройки → Аналитика за използването</strong>. Тези
-          данни не са свързани с име или имейл, които ние събираме. Отказът не
-          изключва рекламите.
+          играчи). Няма диалог за аналитика при старт. Събиране има само ако включите
+          <strong>Настройки → Аналитика за използването</strong> в версия от магазина,
+          и само ако iOS проследяването е разрешено когато ATT важи. „Помоли
+          приложението да не проследява“ изключва аналитиката и скрива превключвателя.
+          Отказът не изключва рекламите.
         </li>
         <li><strong>Не</strong> продаваме лични данни.</li>
         <li>
@@ -876,27 +891,34 @@
 
       <h3>Проследяване в iOS (App Tracking Transparency)</h3>
       <p>
-        На iOS Apple може да покаже системно питане дали Приложението може да проследява
-        активността ви за персонализирани реклами и измерване. Можете да откажете и пак
-        да използвате Приложението, включително платените функции.
+        На iOS Apple показва системно питане преди персонализирани реклами или измерване
+        с рекламния идентификатор. Текстът обяснява, че идентификаторът се ползва за
+        персонализирани реклами, измерване на реклами и измерване на използването, ако
+        включите аналитика. Можете да откажете и пак да използвате Приложението,
+        включително платените функции. След „Помоли приложението да не проследява“
+        рекламите са само неперсонализирани, UMP не се показва, а Firebase остава
+        изключен.
       </p>
       <p>
         По-късно:
         <strong>Настройки → Поверителност и сигурност → Проследяване</strong>.
       </p>
       <p>
-        Това системно питане е отделно от въпроса в Приложението за
-        <strong>аналитика за използването</strong>. Отговорът на едното не отговаря
-        на другото. Android няма същото системно питане; изборът за рекламния
+        Няма отделен диалог за аналитика при старт — само
+        <strong>Настройки → Аналитика за използването</strong>, и на iOS само ако ATT е
+        разрешено. Android няма същото системно питане; изборът за рекламния
         идентификатор е в <strong>Настройки → Google → Реклами</strong>.
       </p>
 
       <h3>Покупки в приложението</h3>
       <p>
         Плащането се обработва от Apple или Google. Ние не получаваме пълния номер на
-        картата ви. <strong>RevenueCat</strong> може да получи история на покупките,
-        анонимен идентификатор, данни за трансакцията/разписката и тип устройство. Не
-        изпращаме резултати от игри към RevenueCat. Вижте
+        картата ви. Връщанията са през Apple или Google (напр. App Store → Докладвай
+        проблем), не с бутон вътре в Belot Score. Ползвайте
+        <strong>Възстанови покупки</strong> в Настройки или на paywall екрана.
+        <strong>RevenueCat</strong> може да получи история на покупките, анонимен
+        идентификатор, данни за трансакцията/разписката и тип устройство. Не изпращаме
+        резултати от игри към RevenueCat. Вижте
         <a href="https://www.revenuecat.com/privacy"
           >Политиката за поверителност на RevenueCat</a
         >.
@@ -949,18 +971,19 @@
           <strong>Локални данни:</strong> за да предоставим функцията, която искате.
         </li>
         <li>
-          <strong>Реклами:</strong> съгласие чрез формуляра на Google (UMP) и на iOS чрез
-          App Tracking Transparency, където се изисква.
+          <strong>Реклами:</strong> на iOS App Tracking Transparency контролира
+          персонализираните реклами. UMP може да се покаже само когато проследяването е
+          разрешено; след отказ на ATT формата не се показва и рекламите са
+          неперсонализирани.
         </li>
         <li>
           <strong>Покупки:</strong> изпълнение на покупката и възстановяване на правата.
         </li>
         <li>
-          <strong>Аналитика:</strong> само със съгласие. Приложението пита дали
-          разрешавате аналитика за използването, преди да се изпратят данни. Можете
-          да оттеглите съгласието по-късно от
-          <strong>Настройки → Аналитика за използването</strong>. Формулярът за
-          реклами не покрива тази цел.
+          <strong>Аналитика:</strong> само със съгласие чрез
+          <strong>Настройки → Аналитика за използването</strong> (без диалог при старт),
+          и на iOS само когато App Tracking е разрешено. Можете да оттеглите съгласието
+          по-късно от Настройки. Формулярът за реклами не покрива тази цел.
         </li>
       </ul>
 
@@ -1063,10 +1086,11 @@
       <p class="meta">
         App Store / Google Play alignment: Local game data is not collected by us
         off-device. AdMob may collect device/ad IDs, ad interactions, diagnostics,
-        and approximate location. Google Analytics for Firebase runs only after the
-        user allows usage analytics in the app (Settings → Usage analytics). If
-        allowed, it may collect an app-instance ID, screen views, sessions, general
-        hand results without player names, approximate location from IP, and purchase
+        and approximate location. After Ask App Not to Track, ads are non-personalized
+        and UMP is skipped. Google Analytics for Firebase runs only after the
+        user allows usage analytics in Settings (no launch prompt), and on iOS only when
+        ATT is allowed. If allowed, it may collect an app-instance ID, screen views,
+        sessions, general hand results without player names, approximate location from IP, and purchase
         events. We do not use Crashlytics. RevenueCat and the stores may collect
         purchase history to provide in-app purchases. We do not sell personal
         information.
